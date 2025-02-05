@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\InscriptionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/inscription', [InscriptionController::class, 'create'])->name('inscription.create');
+Route::post('/inscription', [InscriptionController::class, 'store'])->name('inscription.store');
+Route::get('/inscriptions', [InscriptionController::class, 'index'])->name('inscription.index');
+Route::delete('/inscription/{inscription}', [InscriptionController::class, 'destroy'])->name('inscription.destroy');
+
