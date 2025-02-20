@@ -35,12 +35,7 @@ class AuthController extends Controller
         return redirect('/dashboard');
     }
 
-    // Afficher le formulaire de connexion
-    public function showLoginForm()
-    {
-        return view('auth.login');
-    }
-
+    
     // Traiter la connexion
     public function login(Request $request)
     {
