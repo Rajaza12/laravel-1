@@ -108,7 +108,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('users.index') }}">Mes Informations</a>
+                        <a class="nav-link" href="{{ route('users.index') }}">Liste des Utilisateurs</a>   
                     </li>
                 </ul>
                 @if (Auth::check())
@@ -206,27 +206,7 @@
             .catch(error => alert("Erreur lors de l'inscription. Essayez encore."));
         });
 
-        // Soumettre les formulaires avec Fetch (connexion)
-        document.getElementById('connexionForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const formData = new FormData(this);
-            fetch("{{ route('login.submit') }}", {
-                method: 'POST',
-                headers: {
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                },
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    window.location.href = "/";
-                } else {
-                    alert(data.message);
-                }
-            })
-            .catch(error => alert("Erreur de connexion. Essayez encore."));
-        });
+   
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

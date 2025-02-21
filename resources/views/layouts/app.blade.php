@@ -67,7 +67,8 @@
                       <li><a class="dropdown-item" href="{{ route('tp.react') }}">Code React.js</a></li>
                   </ul>
               
-                    <a class="nav-link" href="{{ route('user.store') }}">Mes Information</a>
+                 <!-- Dans votre fichier HTML existant -->
+    <a class="nav-link" href="{{ route('users.index') }}">Liste des Utilisateurs</a>   
             </ul>
         </div>
     </div>

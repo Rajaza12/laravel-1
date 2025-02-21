@@ -19,6 +19,10 @@ use App\Http\Controllers\TPController;
 */
 
 
+Route::post('/register', [AuthController::class, 'register'])->name('register.submit');
+
+// routes/web.php
+Route::get('/users', [UserController::class, 'index'])->name('users.index');
 
 Route::get('/profile', [UserCustomController::class, 'show'])->name('profile.show');
 Route::get('/cours/laravel', [CoursController::class, 'laravel'])->name('cours.laravel');
@@ -65,8 +69,6 @@ Route::get('/tp/react', function () {
 Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register.form');
 Route::post('/register', [AuthController::class, 'register'])->name('register.submit');
 
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login.form');
-Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
@@ -76,18 +78,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware('auth');
 
-// Liste des utilisateurs
-Route::get('/users', function () {
-    $users = App\Models\User::all();
-    return view('users', ['users' => $users]);
-})->middleware('auth');
 
-Route::get('/users', function () {
-    $users = App\Models\User::all();
-    return view('users', ['users' => $users]);
-})->middleware('auth')->name('users.index');
 
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::get('/auth/{id}/edit', [AuthController::class, 'edit'])->name('auth.edit');
 
 
