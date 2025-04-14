@@ -95,6 +95,15 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('profile.show') }}">Mon Profil</a>
                     </li>
+                    
+                      
+                <!-- Ajout des liens Clients et Produits -->
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('clients.index') }}">Clients</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('produits.index') }}">Produits</a>
+                </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Catégories</a>
                         <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">

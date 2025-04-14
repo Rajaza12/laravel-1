@@ -41,6 +41,7 @@
                             <!-- Bouton Supprimer -->
                             <form action="{{ route('users.destroy', $user->id) }}" method="POST" class="d-inline">
                                 @csrf
+                    
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Voulez-vous vraiment supprimer cet utilisateur ?')">
                                     <i class="fas fa-trash-alt"></i>

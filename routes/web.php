@@ -7,6 +7,21 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CoursController;
 use App\Http\Controllers\TPController;
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ProduitController;
+use App\Http\Controllers\TestController;
+
+
+//Route::get('/restricted', function () {
+  //  return view('welcome');
+//})->middleware('checkAge');
+
+
+Route::get("/testlang",[TestController::class,"showLang"])->middleware("langDetector");
+
+Route::resource('clients', ClientController::class);
+Route::resource('produits', ProduitController::class);
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
